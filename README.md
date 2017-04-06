@@ -12,7 +12,7 @@ PermissionHelper used to simplfy Runtime Permission Structure.
 ### Download
 Include the following dependency in your apps build.gradle file.
 ```
-compile 'com.master.android:<______>:1.0'
+compile 'com.master.android:permissionhelper:1.0'
 ```
 
 ### How to use
