@@ -5,7 +5,7 @@
 PermissionHelper used to simplfy Runtime Permission Structure.
   - Easy to use
   - Works on Pre-Marshmallow(No need to check for build version condition)
-  - Get Callback on exactly place where you asked for permission.
+  - Get Callback on exactly same place where you asked for permission.
   - Get Grant callback whenever all the permission you mentioned are granted else Deny callback
   - Get callback when permission is auto denied by system(When user selects, Don't ask again).
 
