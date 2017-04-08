@@ -1,6 +1,6 @@
 # Permission Helper
 
-[![N|Solid](https://img.shields.io/badge/Android%20Arsenal-Simpler%20Recycler%20View%20Adapter-brightgreen.svg)](https://android-arsenal.com/details/1/5354)
+[![N|Solid](https://img.shields.io/badge/Android%20Arsenal-PermissionHelper-brightgreen.svg)](https://android-arsenal.com/details/1/5532)
 
 PermissionHelper used to simplfy Runtime Permission Structure.
   - Easy to use
