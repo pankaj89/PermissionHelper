@@ -33,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onPermissionDeniedBySystem() {
                 Log.d(TAG, "onPermissionDeniedBySystem() called");
+                permissionHelper.openAppDetailsActivity();
             }
         });
     }
