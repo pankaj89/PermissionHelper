@@ -9,13 +9,13 @@ PermissionHelper used to simplfy Runtime Permission Structure.
   - Get Grant callback whenever all the permission you mentioned are granted else Deny callback
   - Get callback when permission is auto denied by system(When user selects, Don't ask again).
   
-### Latest Version [1.1]
-Added openAppDetailsActivity() to open application details screen so user manually change permissions.
+### Latest Version [1.2]
+Removed Allow backup conflict. [#3](https://github.com/pankaj89/PermissionHelper/issues/3)
 
 ### Download
 Include the following dependency in your apps build.gradle file.
 ```
-compile 'com.master.android:permissionhelper:1.1'
+compile 'com.master.android:permissionhelper:1.2'
 ```
 
 ### How to use

@@ -61,7 +61,8 @@ APP_HOME="`pwd -P`"
 cd "$SAVED" >/dev/null
 
 CLASSPATH=$APP_HOME/gradle/wrapper/gradle-wrapper.jar
-
+# <<Set by pankaj, Setting the location of java which is used in android studio. otherwise it gives message unsupported version 52.0>>
+JAVA_HOME="/home/hb/android-studio/jre"
 # Determine the Java command to use to start the JVM.
 if [ -n "$JAVA_HOME" ] ; then
     if [ -x "$JAVA_HOME/jre/sh/java" ] ; then
