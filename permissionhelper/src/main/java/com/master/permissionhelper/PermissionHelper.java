@@ -85,11 +85,15 @@ public class PermissionHelper {
 
         if (requestCode == REQUEST_CODE) {
             boolean denied = false;
+            int i = 0;
+            ArrayList<String> grantedPermissions = new ArrayList<String>();
             for (int grantResult : grantResults) {
                 if (grantResult != PackageManager.PERMISSION_GRANTED) {
                     denied = true;
-                    break;
+                } else {
+                    grantedPermissions.add(permissions[i]);
                 }
+                i++;
             }
 
             if (denied) {
@@ -100,14 +104,22 @@ public class PermissionHelper {
                         mPermissionCallback.onPermissionDeniedBySystem();
                 } else {
                     Log.i(TAG, "PERMISSION: Permission Denied");
-                    if (mPermissionCallback != null)
+                    //Checking if any single individual permission is granted then show user that permission
+                    if (!grantedPermissions.isEmpty()) {
+                        if (mPermissionCallback != null)
+                            mPermissionCallback.onIndividualPermissionGranted(grantedPermissions.toArray(new String[grantedPermissions.size()]));
+                    }
+                    if (mPermissionCallback != null) {
                         mPermissionCallback.onPermissionDenied();
+                    }
                 }
             } else {
                 Log.i(TAG, "PERMISSION: Permission Granted");
                 if (mPermissionCallback != null)
                     mPermissionCallback.onPermissionGranted();
             }
+
+
         }
     }
 
@@ -116,6 +128,8 @@ public class PermissionHelper {
 
     public interface PermissionCallback {
         public void onPermissionGranted();
+
+        public void onIndividualPermissionGranted(String grantedPermission[]);
 
         public void onPermissionDenied();
 

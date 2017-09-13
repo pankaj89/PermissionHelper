@@ -7,15 +7,16 @@ PermissionHelper used to simplfy Runtime Permission Structure.
   - Works on Pre-Marshmallow(No need to check for build version condition)
   - Get Callback on exactly same place where you asked for permission.
   - Get Grant callback whenever all the permission you mentioned are granted else Deny callback
+  - Get callback whenever some permissions from you mentioned are granted.(New)
   - Get callback when permission is auto denied by system(When user selects, Don't ask again).
   
-### Latest Version [1.2]
-Removed Allow backup conflict. [#3](https://github.com/pankaj89/PermissionHelper/issues/3)
+### Latest Version [1.3]
+Added new method 'onIndividualPermissionGranted()'. [#4](https://github.com/pankaj89/PermissionHelper/issues/4)
 
 ### Download
 Include the following dependency in your apps build.gradle file.
 ```
-compile 'com.master.android:permissionhelper:1.2'
+compile 'com.master.android:permissionhelper:1.3'
 ```
 
 ### How to use
@@ -26,7 +27,12 @@ permissionHelper.request(new PermissionHelper.PermissionCallback() {
     public void onPermissionGranted() {
         Log.d(TAG, "onPermissionGranted() called");
     }
-
+    
+    @Override
+    public void onIndividualPermissionGranted(String[] grantedPermission) {
+        Log.d(TAG, "onIndividualPermissionGranted() called with: grantedPermission = [" + TextUtils.join(",",grantedPermission) + "]");
+    }
+    
     @Override
     public void onPermissionDenied() {
         Log.d(TAG, "onPermissionDenied() called");
