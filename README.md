@@ -10,13 +10,14 @@ PermissionHelper used to simplfy Runtime Permission Structure.
   - Get callback whenever some permissions from you mentioned are granted.(New)
   - Get callback when permission is auto denied by system(When user selects, Don't ask again).
   
-### Latest Version [1.3]
-Added new method 'onIndividualPermissionGranted()'. [#4](https://github.com/pankaj89/PermissionHelper/issues/4)
+### Latest Version [1.4]
+Rename method hasPermission to hasPermissionInManifest and make it private, 
+We can use checkSelfPermission for checking individual permission.
 
 ### Download
 Include the following dependency in your apps build.gradle file.
 ```
-compile 'com.master.android:permissionhelper:1.3'
+compile 'com.master.android:permissionhelper:1.4'
 ```
 
 ### How to use
