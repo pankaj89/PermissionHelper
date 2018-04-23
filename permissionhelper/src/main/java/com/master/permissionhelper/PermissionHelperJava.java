@@ -22,10 +22,9 @@ import static android.support.v4.app.ActivityCompat.shouldShowRequestPermissionR
  * Created by pankaj on 1/11/17.
  */
 
-public class PermissionHelper {
+class PermissionHelperJava {
 
-    private static final String TAG = "PermissionHelper";
-    private static PermissionHelper permissionHelper;
+    private static final String TAG = "PermissionHelperJava";
     private static int REQUEST_CODE;
 
     private Activity activity;
@@ -35,7 +34,7 @@ public class PermissionHelper {
     private boolean showRational;
 
     //=========Constructors - START=========
-    private PermissionHelper(Activity activity, Fragment fragment, String[] permissions, int requestCode) {
+    private PermissionHelperJava(Activity activity, Fragment fragment, String[] permissions, int requestCode) {
         this.activity = activity;
         this.fragment = fragment;
         this.permissions = permissions;
@@ -43,14 +42,14 @@ public class PermissionHelper {
         checkIfPermissionPresentInAndroidManifest();
     }
 
-    public PermissionHelper(Activity activity, String[] permissions, int requestCode) {
+    public PermissionHelperJava(Activity activity, String[] permissions, int requestCode) {
         this.activity = activity;
         this.permissions = permissions;
         this.REQUEST_CODE = requestCode;
         checkIfPermissionPresentInAndroidManifest();
     }
 
-    public PermissionHelper(Fragment fragment, String[] permissions, int requestCode) {
+    public PermissionHelperJava(Fragment fragment, String[] permissions, int requestCode) {
         this.fragment = fragment;
         this.permissions = permissions;
         this.REQUEST_CODE = requestCode;
@@ -59,7 +58,7 @@ public class PermissionHelper {
 
     private void checkIfPermissionPresentInAndroidManifest() {
         for (String permission : permissions) {
-            if (hasPermission(permission) == false) {
+            if (hasPermissionInManifest(permission) == false) {
                 throw new RuntimeException("Permission (" + permission + ") Not Declared in manifest");
             }
         }
@@ -201,7 +200,7 @@ public class PermissionHelper {
     }
 
     //===================
-    public boolean hasPermission(String permission) {
+    private boolean hasPermissionInManifest(String permission) {
         try {
             Context context = activity != null ? activity : fragment.getActivity();
             PackageInfo info = context.getPackageManager().getPackageInfo(context.getPackageName(), PackageManager.GET_PERMISSIONS);

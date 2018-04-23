@@ -10,16 +10,41 @@ PermissionHelper used to simplfy Runtime Permission Structure.
   - Get callback whenever some permissions from you mentioned are granted.(New)
   - Get callback when permission is auto denied by system(When user selects, Don't ask again).
   
-### Latest Version [1.3]
-Added new method 'onIndividualPermissionGranted()'. [#4](https://github.com/pankaj89/PermissionHelper/issues/4)
+### Latest Version [2.0]
+Shortcut/Easy access from kotlin project.
 
 ### Download
 Include the following dependency in your apps build.gradle file.
 ```
-compile 'com.master.android:permissionhelper:1.3'
+compile 'com.master.android:permissionhelper:2.0'
 ```
 
 ### How to use
+
+#### In Kotlin
+```kotlin
+permissionHelper = PermissionHelper(this, arrayOf(Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE, Manifest.permission.CALL_PHONE), 100)
+permissionHelper?.denied {
+    if (it) {
+        Log.d(TAG, "Permission denied by system")
+        permissionHelper?.openAppDetailsActivity()
+    } else {
+        Log.d(TAG, "Permission denied")
+    }
+}
+
+//Request all permission
+permissionHelper?.requestAll {
+    Log.d(TAG, "All permission granted")
+}
+
+//Request individual permission
+permissionHelper?.requestIndividual {
+    Log.d(TAG, "Individual Permission Granted")
+}
+```
+
+#### In Java
 ```java
 permissionHelper = new PermissionHelper(this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, 100);
 permissionHelper.request(new PermissionHelper.PermissionCallback() {
