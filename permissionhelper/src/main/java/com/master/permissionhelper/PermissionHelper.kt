@@ -58,7 +58,7 @@ class PermissionHelper {
     //=========Constructors- END=========
     fun request(permissionCallback: PermissionCallback?) {
         this.mPermissionCallback = permissionCallback
-        if (checkSelfPermission(permissions) == false) {
+        if (hasPermission() == false) {
             showRational = shouldShowRational(permissions!!)
             if (activity != null)
                 ActivityCompat.requestPermissions(activity!!, filterNotGrantedPermission(permissions!!), REQUEST_CODE)
@@ -163,6 +163,21 @@ class PermissionHelper {
             }
         }
         return notGrantedPermission.toTypedArray()
+    }
+
+    /**
+     * Check permission is there or not
+     *
+     * @param permissions
+     * @return
+     */
+    fun hasPermission(): Boolean {
+        for (permission in permissions!!) {
+            if (ContextCompat.checkSelfPermission(getContext()!!, permission) != PackageManager.PERMISSION_GRANTED) {
+                return false
+            }
+        }
+        return true
     }
 
     /**

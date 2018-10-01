@@ -3,21 +3,32 @@
 [![N|Solid](https://img.shields.io/badge/Android%20Arsenal-PermissionHelper-brightgreen.svg)](https://android-arsenal.com/details/1/5532)
 
 PermissionHelper used to simplfy Runtime Permission Structure.
-  - Easy to use
-  - Works on Pre-Marshmallow(No need to check for build version condition)
+  - Easy to use.
+  - Works with Activity and Fragment directly.
+  - Works on Pre-Marshmallow (No need to check for build version condition).
   - Get Callback on exactly same place where you asked for permission.
   - Get Grant callback whenever all the permission you mentioned are granted else Deny callback
   - Get callback whenever some permissions from you mentioned are granted.(New)
   - Get callback when permission is auto denied by system(When user selects, Don't ask again).
   
-### Latest Version [2.0]
-Shortcut/Easy access from kotlin project.
+### Latest Version [2.1]
+- Added method hasPermission() to check if permission is there.
+- Updated compileSdkVersion to 28
 
 ### Download
 Include the following dependency in your apps build.gradle file.
 ```
+compile 'com.master.android:permissionhelper:2.1'
+```
+
+### `******` Imp Note `******`
+If your project's compileSdkVersion is less then 28
+then use
+```
 compile 'com.master.android:permissionhelper:2.0'
 ```
+else you faced
+```error: resource android:attr/dialogCornerRadius not found.``` while syncing
 
 ### How to use
 
