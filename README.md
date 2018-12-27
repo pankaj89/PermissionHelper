@@ -18,7 +18,7 @@ PermissionHelper used to simplfy Runtime Permission Structure.
 ### Download
 Include the following dependency in your apps build.gradle file.
 ```
-compile 'com.master.android:permissionhelper:2.1'
+implementation 'com.master.android:permissionhelper:2.1'
 ```
 
 ### `******` Imp Note `******`
