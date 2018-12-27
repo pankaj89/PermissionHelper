@@ -25,7 +25,7 @@ implementation 'com.master.android:permissionhelper:2.1'
 If your project's compileSdkVersion is less then 28
 then use
 ```
-compile 'com.master.android:permissionhelper:2.0'
+implementation 'com.master.android:permissionhelper:2.0'
 ```
 else you faced
 ```error: resource android:attr/dialogCornerRadius not found.``` while syncing
