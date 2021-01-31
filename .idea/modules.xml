@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PermissionHelper.iml" filepath="$PROJECT_DIR$/PermissionHelper.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/permissionhelper/permissionhelper.iml" filepath="$PROJECT_DIR$/permissionhelper/permissionhelper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/PermissionHelper.iml" filepath="$PROJECT_DIR$/.idea/PermissionHelper.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/PermissionHelper.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/PermissionHelper.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/permissionhelper/PermissionHelper.permissionhelper.iml" filepath="$PROJECT_DIR$/.idea/modules/permissionhelper/PermissionHelper.permissionhelper.iml" />
     </modules>
   </component>
 </project>
