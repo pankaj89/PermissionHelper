@@ -11,14 +11,13 @@ PermissionHelper used to simplfy Runtime Permission Structure.
   - Get callback whenever some permissions from you mentioned are granted.(New)
   - Get callback when permission is auto denied by system(When user selects, Don't ask again).
   
-### Latest Version [2.1]
-- Added method hasPermission() to check if permission is there.
-- Updated compileSdkVersion to 28
+### Latest Version [2.2]
+- Updated compileSdkVersion to 30
 
 ### Download
 Include the following dependency in your apps build.gradle file.
 ```
-implementation 'com.master.android:permissionhelper:2.1'
+implementation 'com.master.android:permissionhelper:2.2'
 ```
 
 ### `******` Imp Note `******`
