@@ -3,12 +3,12 @@ apply plugin: 'kotlin-android'
 ext {
     PUBLISH_GROUP_ID = 'com.master.android'
     PUBLISH_ARTIFACT_ID = 'permissionhelper'
-    PUBLISH_VERSION = '2.1'
+    PUBLISH_VERSION = '2.2'
 }
 
 android {
     compileSdkVersion 30
-    buildToolsVersion '30.0.2'
+    buildToolsVersion '30.0.3'
 
     defaultConfig {
         minSdkVersion 15
