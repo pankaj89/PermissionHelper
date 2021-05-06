@@ -11,23 +11,23 @@ PermissionHelper used to simplfy Runtime Permission Structure.
   - Get callback whenever some permissions from you mentioned are granted.(New)
   - Get callback when permission is auto denied by system(When user selects, Don't ask again).
   
-### Latest Version [2.2]
-- Updated compileSdkVersion to 30
+### Latest Version [2.3]
+- As jCenter is deprecated we have switched to jitpack as of now.
 
 ### Download
-Include the following dependency in your apps build.gradle file.
+In root level build.gradle
 ```
-implementation 'com.master.android:permissionhelper:2.2'
+allprojects {
+  repositories {
+    ...
+    maven { url 'https://jitpack.io' }
+  }
+}
 ```
-
-### `******` Imp Note `******`
-If your project's compileSdkVersion is less then 28
-then use
+Include the following dependency in your apps level build.gradle file.
 ```
-implementation 'com.master.android:permissionhelper:2.0'
+implementation 'com.github.pankaj89:PermissionHelper:2.3'
 ```
-else you faced
-```error: resource android:attr/dialogCornerRadius not found.``` while syncing
 
 ### How to use
 
