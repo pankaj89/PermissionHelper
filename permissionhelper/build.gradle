@@ -1,10 +1,5 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
-ext {
-    PUBLISH_GROUP_ID = 'com.master.android'
-    PUBLISH_ARTIFACT_ID = 'permissionhelper'
-    PUBLISH_VERSION = '2.2'
-}
 
 android {
     compileSdkVersion 30
@@ -33,5 +28,3 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
-//./gradlew clean build generateRelease
-apply from: 'https://raw.githubusercontent.com/blundell/release-android-library/master/android-release-aar.gradle'
